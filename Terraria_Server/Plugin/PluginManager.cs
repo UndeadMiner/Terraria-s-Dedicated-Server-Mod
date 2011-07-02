@@ -250,6 +250,11 @@ namespace Terraria_Server.Plugin
                                     plugin.onPlayerProjectileUse((PlayerProjectileEvent)Event);
                                     break;
                                 }
+                            case Hooks.NPC_DEATH:
+                                {
+                                    plugin.onNPCDeath((NPCDeathEvent)Event);
+                                    break;
+                                }
                         }
                     }
                 }

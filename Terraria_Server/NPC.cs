@@ -1,5 +1,6 @@
 using System;
 using Terraria_Server.Plugin;
+using Terraria_Server.Events;
 
 namespace Terraria_Server
 {
@@ -7975,6 +7976,18 @@ namespace Terraria_Server
                     {
                         //Main.PlaySound4, (int)this.position.X, (int)this.position.Y, this.soundKilled);
                     }
+
+                    NPCDeathEvent Event = new NPCDeathEvent();
+                    Event.Npc = this;
+                    Event.Damage = Damage;
+                    Event.KnockBack = knockBack;
+                    Event.HitDirection = hitDirection;
+                    Program.server.getPluginManager().processHook(Plugin.Hooks.NPC_DEATH, Event);
+                    if (Event.getCancelled())
+                    {
+                        return 0.0;
+                    }
+
                     this.NPCLoot();
                     this.active = false;
                     if (this.type == 26 || this.type == 27 || this.type == 28 || this.type == 29)

@@ -42,6 +42,7 @@ namespace Terraria_Server.Plugin
         public virtual void onDoorStateChange(DoorStateChangeEvent Event) { }
         public virtual void onPlayerEditSign(PlayerEditSignEvent Event) { }
         public virtual void onPlayerProjectileUse(PlayerProjectileEvent Event) { }
+        public virtual void onNPCDeath(NPCDeathEvent Event) { }
 
     	private ArrayList pluginHooks = new ArrayList();
 

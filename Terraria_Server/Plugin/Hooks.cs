@@ -21,7 +21,8 @@ namespace Terraria_Server.Plugin
         PLAYER_DEATH,
         DOOR_STATECHANGE,
         PLAYER_EDITSIGN,
-        PLAYER_PROJECTILE //,
+        PLAYER_PROJECTILE,
+        NPC_DEATH //,
         //PLAYER_DESTROYSIGN
     }
 }
